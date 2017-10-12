@@ -1,0 +1,16 @@
+body .modal-dialog { /* Width */
+    max-width: 100%;
+    width: auto !important;
+    height: auto !important;
+    display: inline-block;
+}
+
+
+.modal {
+  text-align: center;
+}
+
+
+.modal.in{
+     text-align: center;
+}
