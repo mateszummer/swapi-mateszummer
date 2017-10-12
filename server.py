@@ -1,5 +1,4 @@
 import data_manager
-import common
 import queries
 from functools import wraps
 from flask import Flask, render_template, redirect, request, session, g
