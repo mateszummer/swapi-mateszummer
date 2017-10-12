@@ -53,3 +53,8 @@ def route_login():
     session['user_id'] = queries.get_one_user_data_by_username("id", user_data["username"])
     g.user = queries.get_user_data_by_id(session['user_id'])
     return render_template("index.html", login_succes = 'succeed')
+
+
+if __name__ == "__main__":
+    app.secret_key = 'errenincsisszükségám'
+    app.run(debug=True, port=5030, host="0.0.0.0")
