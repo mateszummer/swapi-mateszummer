@@ -14,7 +14,7 @@ function createTable(link='https://swapi.co/api/planets') {
                             <td>${data.results[i]['surface_water']} </td>
                             <td>${data.results[i]['population']} </td>
                             <td id="residents_${i}"></td>
-                            <td> <button class="btn-default vote_button" hidden="True" id='vote_${i}'>Vote</td>
+                            <td> <button class="btn btn-outline-default my-2 my-sm-0 vote_button" hidden="True" id='vote_${i}'>Vote</td>
                         </tr>`
             document.getElementById("table").insertAdjacentHTML('beforeend', row);
             $('tr_class').hide()
@@ -37,7 +37,7 @@ function setResidents(data, i) {
     else {
         let count = data.results[i]['residents'].length
         document.getElementById(`residents_${i}`).innerHTML = `
-            <button type="button" id='residents_${i}_button' data-toggle="modal" data-target="#residents_${i}_modal"> ${count} resident(s)</button>
+            <button class="btn btn-outline-info" type="button" id='residents_${i}_button' data-toggle="modal" data-target="#residents_${i}_modal"> ${count} resident(s)</button>
             <div id="residents_${i}_modal" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -48,7 +48,7 @@ function setResidents(data, i) {
                             <div id="residents_${i}_modal_body" class="modal-body">
                             </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
