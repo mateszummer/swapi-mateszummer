@@ -68,6 +68,8 @@
                 <th></th>
             </tr>
         </table>
+        <form id="main_page" action="/">
+        </form>
         {% if reg_succes == "failed" %}
             <script>
                 $("#modal_body").append("<br><h6 style='color: red'>Username '{{username}}' is already taken</h6>")
@@ -76,6 +78,9 @@
         {% elif reg_succes == "succeed" %}
             <script>
             swal("Succesful register", "gz", "success");
+            setTimeout(function() {
+                $("#main_page").submit();
+            }, 1000)
             </script>
         {% endif %}
         {% if login_succes == "failed" %}
@@ -83,6 +88,9 @@
         {% elif login_succes == "succeed" %}
             <script>
             swal("Succesfully logged in", ":)", "success");
+            setTimeout(function() {
+                $("#main_page").submit();
+            }, 1000)
             </script>
         {% endif %}
     </body>
