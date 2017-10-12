@@ -55,6 +55,4 @@ def route_login():
     return render_template("index.html", login_succes = 'succeed')
 
 
-if __name__ == "__main__":
-    app.secret_key = 'errenincsisszükségám'
-    app.run(debug=True, port=5030, host="0.0.0.0")
+app.secret_key = 'errenincsisszükségám'
