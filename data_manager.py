@@ -4,11 +4,21 @@ import psycopg2.extras
 import re
 from psycopg2.extensions import AsIs
 
+import os
+from urllib import parse
+import psycopg2
 
 def open_database():
     try:
-        connection_string = Config.DB_CONNECTION_STR
-        connection = psycopg2.connect(connection_string)
+        parse.uses_netloc.append("postgres")
+        url = parse.urlparse(os.environ["DATABASE_URL"])    
+        conn = psycopg2.connect(
+        database=url.path[1:],
+        user=url.username,
+        password=url.password,
+        host=url.hostname,
+        port=url.port
+        )
         connection.autocommit = True
     except psycopg2.DatabaseError as exception:
         print(exception)
