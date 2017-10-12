@@ -1,5 +1,4 @@
 import data_manager
-import common
 import psycopg2
 import psycopg2.extras
 from psycopg2.extensions import AsIs
