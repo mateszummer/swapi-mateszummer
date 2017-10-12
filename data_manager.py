@@ -1,4 +1,3 @@
-from config import Config
 import psycopg2
 import psycopg2.extras
 import re
@@ -11,7 +10,7 @@ import psycopg2
 def open_database():
     try:
         parse.uses_netloc.append("postgres")
-        url = parse.urlparse(os.environ["DATABASE_URL"])    
+        url = parse.urlparse(os.environ["DATABASE_URL"])
         conn = psycopg2.connect(
         database=url.path[1:],
         user=url.username,
