@@ -14,7 +14,6 @@ function createTable(link='https://swapi.co/api/planets') {
                             <td>${data.results[i]['surface_water']} </td>
                             <td>${data.results[i]['population']} </td>
                             <td id="residents_${i}"></td>
-                            <td> <button class="btn btn-outline-default my-2 my-sm-0 vote_button" hidden="True" id='vote_${i}'>Vote</td>
                         </tr>`
             document.getElementById("table").insertAdjacentHTML('beforeend', row);
             $('tr_class').hide()
